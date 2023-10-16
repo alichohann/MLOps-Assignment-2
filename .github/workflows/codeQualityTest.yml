@@ -3,7 +3,7 @@ name: code Quality Testing
 on:
     push:
         branches:
-            -dev
+              - dev
 
 
 jobs:
