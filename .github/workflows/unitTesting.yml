@@ -1,0 +1,25 @@
+name: Unit Testing
+
+on:
+    pull_request:
+        branches:
+              - test
+
+jobs:
+    codeQuality:
+        runs-on: ubunut-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up python
+              uses: actions/setup-python@v2
+              with: 
+                python-version: 3.x
+
+            - name: install dependencies
+              run: pip install -r requirements.txt
+
+            - name: Run Unit tests
+              run: python3 test.py
+    
