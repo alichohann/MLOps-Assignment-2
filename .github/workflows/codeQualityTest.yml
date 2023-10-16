@@ -1,0 +1,26 @@
+name: code Quality Testing
+
+on:
+    push:
+        branches:
+            -dev
+
+
+jobs:
+    codeQuality:
+        runs-on: ubunut-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up python
+              uses: action/setup-python@v2
+              with: 
+                python-version: 3.x
+
+            - name: install dependencies
+              run: pip install flake8
+
+            - name: run Flake8
+              run: flake7 .
+    
