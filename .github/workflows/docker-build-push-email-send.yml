@@ -12,7 +12,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
 
-            - name: Docker Iamge Build
+            - name: Docker Image Build
               run: docker build -t ${{ secrets.DOCKER_USERNAME }}/ci-cd_pipeline:latest .
 
             - name: Docker Login
@@ -33,7 +33,7 @@ jobs:
                     Hello,
 
                     You task has been completely executed.
-                    
+
                     Regards. 
                     ```
                   to: ${{ secrets.EMAIL_TO }}
